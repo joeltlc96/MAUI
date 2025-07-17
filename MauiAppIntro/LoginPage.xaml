@@ -5,13 +5,17 @@
              Title="Login">
     
     <Grid ColumnDefinitions="1.5*,1*">
-        <!-- Left Side - Logo -->
+        <!-- Left Side - Logo con imagen de fondo -->
         <BoxView 
             BackgroundColor="#1E88E5"
-            Grid.Column="0"/>
-            
+            Grid.Column="0">
+            <BoxView.Clip>
+                <RoundRectangleGeometry Rect="0,0,1000,1000" CornerRadius="0,40,40,0"/>
+            </BoxView.Clip>
+        </BoxView>
+        
         <Image 
-            Source="jv_logo"
+            Source="jv_logo.png"
             Grid.Column="0"
             Aspect="AspectFit"
             WidthRequest="200"
@@ -60,7 +64,10 @@
                 TextColor="White"
                 FontAttributes="Bold"
                 CornerRadius="8"
-                HeightRequest="45"/>
+                HeightRequest="45"
+                Clicked="OnLoginClicked"/>
+                
+            <!-- Space for additional elements if needed -->
             
         </VerticalStackLayout>
     </Grid>
