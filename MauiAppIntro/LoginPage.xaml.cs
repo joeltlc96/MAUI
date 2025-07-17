@@ -18,4 +18,9 @@ public partial class LoginPage : ContentPage
         // For now, just show a message
         await DisplayAlert("Login", "Usuario: " + usuario + "\nContraseña: " + password, "OK");
     }
+
+    private async void OnForgotPasswordTapped(object sender, EventArgs e)
+    {
+        await DisplayAlert("Recuperar Contraseña", "Se ha enviado un enlace para restablecer su contraseña a su correo electrónico.", "Aceptar");
+    }
 }

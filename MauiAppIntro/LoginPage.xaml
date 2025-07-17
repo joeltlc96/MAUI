@@ -2,76 +2,66 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppIntro.LoginPage"
-             Title="Login"
-             BackgroundColor="#F5F5F5">
+             Title="Login">
     
-    <ScrollView>
+    <Grid ColumnDefinitions="1.5*,1*">
+        <!-- Left Side - Logo -->
+        <BoxView 
+            BackgroundColor="#1E88E5"
+            Grid.Column="0"/>
+            
+        <Image 
+            Source="jv_logo"
+            Grid.Column="0"
+            Aspect="AspectFit"
+            WidthRequest="200"
+            HeightRequest="200"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+            
+        <!-- Right Side - Login Form -->
         <VerticalStackLayout 
+            Grid.Column="1"
             Spacing="30"
             Padding="40"
             VerticalOptions="Center">
             
-            <!-- Logo/Imagen -->
-            <Frame 
-                BackgroundColor="#2196F3"
-                WidthRequest="120"
-                HeightRequest="120"
-                CornerRadius="60"
-                HorizontalOptions="Center"
-                Padding="0">
-                <Image 
-                    Source="person"
-                    HeightRequest="60"
-                    WidthRequest="60"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-            </Frame>
-            
-            <!-- Campo de Usuario -->
-            <Frame 
-                BackgroundColor="White"
-                BorderColor="#DDDDDD"
-                CornerRadius="10"
-                Padding="15,5"
-                Margin="0,0,0,10">
+            <!-- Usuario -->
+            <Label 
+                Text="Usuario"
+                FontSize="14"/>
+            <Border 
+                Stroke="#E0E0E0"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
                 <Entry 
                     x:Name="UsuarioEntry"
-                    Placeholder="Usuario"
-                    PlaceholderColor="#999999"
-                    TextColor="Black"
-                    ClearButtonVisibility="WhileEditing"
-                    FontSize="16"/>
-            </Frame>
+                    Placeholder="Ingrese su usuario"/>
+            </Border>
             
-            <!-- Campo de Contraseña -->
-            <Frame 
-                BackgroundColor="White"
-                BorderColor="#DDDDDD"
-                CornerRadius="10"
-                Padding="15,5"
-                Margin="0,0,0,10">
+            <!-- Contraseña -->
+            <Label 
+                Text="Contraseña"
+                FontSize="14"/>
+            <Border 
+                Stroke="#E0E0E0"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 8">
                 <Entry 
                     x:Name="PasswordEntry"
-                    Placeholder="Contraseña"
-                    PlaceholderColor="#999999"
-                    TextColor="Black"
                     IsPassword="True"
-                    ClearButtonVisibility="WhileEditing"
-                    FontSize="16"/>
-            </Frame>
+                    Placeholder="Ingrese su contraseña"/>
+            </Border>
             
-            <!-- Botón de Iniciar Sesión -->
+            <!-- Botón Iniciar Sesión -->
             <Button 
                 Text="INICIAR SESIÓN"
+                BackgroundColor="#1E88E5"
                 TextColor="White"
-                BackgroundColor="#0078D7"
                 FontAttributes="Bold"
-                FontSize="16"
-                CornerRadius="25"
-                HeightRequest="50"
-                Margin="0,20,0,0"
-                Clicked="OnLoginClicked"/>
+                CornerRadius="8"
+                HeightRequest="45"/>
             
         </VerticalStackLayout>
-    </ScrollView>
+    </Grid>
 </ContentPage>
