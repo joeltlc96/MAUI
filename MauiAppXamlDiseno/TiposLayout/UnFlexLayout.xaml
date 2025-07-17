@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppXamlDiseno.TiposLayout.UnFlexLayout"
+             Title="UnFlexLayout">
+    
+    <FlexLayout Direction="Row" 
+                JustifyContent="SpaceBetween" 
+                AlignItems="Center"
+                Wrap="NoWrap">
+        <BoxView Color="Red" WidthRequest="150" HeightRequest="50" />
+        <BoxView Color="Green" WidthRequest="50" HeightRequest="50" />
+        <BoxView Color="Blue" WidthRequest="50" HeightRequest="50" />
+        <Button Text="Iniciar" WidthRequest="250" />
+    </FlexLayout>
+
+</ContentPage>

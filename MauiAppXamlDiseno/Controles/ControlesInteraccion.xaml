@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppXamlDiseno.Controles.ControlesInteraccion"
+             Title="Controles de Interacción">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Button -->
+            <Label Text="Button (botón clásico):" FontAttributes="Bold" />
+            <Button Text="Haz clic aquí" />
+
+            <!-- ImageButton -->
+            <Label Text="ImageButton (botón con imagen):" FontAttributes="Bold" />
+            <ImageButton Source="dotnet_bot.png"
+                         WidthRequest="60"
+                         HeightRequest="60"
+                         Clicked="ImageButton_Clicked"/>
+
+            <!-- SearchBar -->
+            <Label Text="SearchBar (barra de búsqueda):" FontAttributes="Bold" />
+            <SearchBar Placeholder="Buscar..." />
+
+            <!-- RefreshView -->
+            <Label Text="RefreshView (recargar contenido):" FontAttributes="Bold" />
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                         Command="{Binding RefreshCommand}">
+                <CollectionView ItemsSource="{Binding Datos}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding}" Padding="10" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+
+            <!-- SwipeView -->
+            <Label Text="SwipeView (gestos deslizables):" FontAttributes="Bold" />
+            <SwipeView>
+                <SwipeView.RightItems>
+                    <SwipeItems Mode="Reveal">
+                        <SwipeItem Text="Eliminar" BackgroundColor="Red" />
+                        <SwipeItem Text="Editar" BackgroundColor="Orange" />
+                    </SwipeItems>
+                </SwipeView.RightItems>
+                <SwipeView.LeftItems>
+                    <SwipeItems Mode="Reveal">
+                        <SwipeItem Text="Eliminar" BackgroundColor="Red" />
+                        <SwipeItem Text="Editar" BackgroundColor="Orange" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Frame BorderColor="red" Padding="10">
+                    <Label Text="Desliza este ítem hacia la izquierda →" />
+                </Frame>
+            </SwipeView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

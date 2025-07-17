@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppXamlDiseno.Controles.ControlesEntradaDatos"
+             Title="Controles de Entrada de Datos">
+
+    <ContentPage.Resources>
+        <Style TargetType="Picker">
+            <Setter Property="Margin" Value="15" />
+            <Setter Property="BackgroundColor" Value="Green"/>         
+        </Style>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Entry -->
+            <Label Text="Entry (una sola línea):" FontAttributes="Bold" />
+            <Entry Placeholder="Ingrese su nombre"/>
+
+            <!-- Editor -->
+            <Label Text="Editor (múltiples líneas):" FontAttributes="Bold" />
+            <Editor Placeholder="Ingrese un comentario..." AutoSize="TextChanges" HeightRequest="80" MaxLength="10" />
+
+            <!-- Picker -->
+            <Label Text="Picker (selección de lista):" FontAttributes="Bold" />
+            <Picker Title="Seleccione un país">
+                <Picker.Items>
+                    <x:String>Ecuador</x:String>
+                    <x:String>Perú</x:String>
+                    <x:String>Colombia</x:String>
+                </Picker.Items>               
+            </Picker>
+
+            <!-- DatePicker -->
+            <Label Text="DatePicker (seleccionar fecha):" FontAttributes="Bold" />
+            <DatePicker Date="09/07/2025" Format="dd/MM/yyyy" />
+
+            <!-- TimePicker -->
+            <Label Text="TimePicker (seleccionar hora):" FontAttributes="Bold" />
+            <TimePicker Time="12:00" Format="HH:mm" />
+
+            <!-- CheckBox -->
+            <Label Text="CheckBox (opción múltiple):" FontAttributes="Bold" />
+            <CheckBox IsChecked="false" />
+
+            <!-- RadioButton -->
+            <Label Text="RadioButton (una opción entre varias):" FontAttributes="Bold" />
+            <HorizontalStackLayout>
+                <RadioButton Content="Masculino" GroupName="Genero" />
+                <RadioButton Content="Femenino" GroupName="Genero" />
+                <RadioButton Content="No sabe" GroupName="Genero" />
+            </HorizontalStackLayout>
+
+            <!-- Switch -->
+            <Label Text="Switch (activado/desactivado):" FontAttributes="Bold" />
+            <Switch IsToggled="true" />
+
+            <!-- Slider -->
+            <Label Text="Slider (valor continuo):" FontAttributes="Bold" />
+            <Slider x:Name="slider1" 
+                    Minimum="0" 
+                    Maximum="100" 
+                    Value="50" 
+                    ValueChanged="Slider_ValueChanged"  />
+
+            <!-- Stepper -->
+            <Label Text="Stepper (incrementos discretos):" FontAttributes="Bold" />
+            <Stepper Minimum="0" Maximum="10" Increment="1" Value="5" 
+                     x:Name="Stepper1"
+                     ValueChanged="Stepper_ValueChanged" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
